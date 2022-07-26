@@ -1,0 +1,38 @@
+.BoardTile {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+
+}
+
+.guess-circle {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 2px dotted black;
+    border-radius: 50%;
+    opacity: .75;
+    background-color: #FFFFFF;
+}
+
+.check-circles{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blue; */
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.check-circle {
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
