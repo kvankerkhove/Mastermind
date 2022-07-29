@@ -1,6 +1,14 @@
 import React from 'react'
 
-function HintPegs() {
+function HintPegs({hintPegKey}) {
+
+  let rightColorRightSpot = hintPegKey[0]
+  let rightColorWrongSpot = hintPegKey[1]
+
+  console.log(`RCRS: ${rightColorRightSpot}`)
+  console.log(`RCWS: ${rightColorWrongSpot}  `)
+
+ 
   return (
     <div className="check-circles">
         <div className='check-circle' id='check-circle-1'></div>

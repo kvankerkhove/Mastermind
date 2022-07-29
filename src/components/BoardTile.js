@@ -9,6 +9,7 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
     2: "",
     3: "",
   })
+  const [hintPegKey, setHintPegKey] = useState([])
 
   const equals = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b)
@@ -28,8 +29,6 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
     let guessEntryArray = Object.entries(attemptObj)
     let answerEntryArray = Object.entries(answerObj)
 
-    console.log(guessEntryArray)
-    console.log(answerEntryArray)
 
     let rightSpot = 0
     let wrongSpot = 0
@@ -43,7 +42,6 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
       
       if(match){
         rightSpot += 1
-        
         let index = updatedanswerArray.indexOf(match)
         updatedanswerArray.splice(index, 1)
       } else {
@@ -51,11 +49,6 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
       }
 
     }
-
-    console.log(updatedguessArray)
-    console.log(updatedanswerArray)
-    console.log(`right: ${rightSpot}`)
-    console.log(`wrong: ${wrongSpot}`)
 
 
     for(const ele of updatedguessArray){
@@ -66,41 +59,10 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
         console.log(index)
         updatedanswerArray.splice(index, 1)
       }
-      console.log(semiMatch)
       
     }
 
 
-
-
-    // for(let i = updatedguessArray.length - 1; i >= 0; i--){
-    //   let semiMatch = updatedanswerArray.find(element => (element[1] === updatedguessArray[i][1]))
-    //   if(semiMatch){
-    //     wrongSpot += 1
-    //     let index = updatedguessArray.indexOf(semiMatch)
-    //     updatedanswerArray.splice(index, 1)
-    //     updatedguessArray.splice(i, 1)
-    //   } else {
-    //     console.log('nope')
-    //   }
-    // }
-
-    // console.log(answerEntryArray)
-    // console.log(updatedguessArray)
-    // console.log(`right: ${rightSpot}`)
-    // console.log(`wrong: ${wrongSpot}`)
-
-    // for(const ele of updatedguessArray){
-    //   let semiMatch = answerEntryArray.find(element => (element[1] === ele[1]))
-    //   if(semiMatch){
-    //     wrongSpot += 1
-    //   } else {
-    //     console.log('nope')
-    //   }
-    // }
-
-  
-    // console.log(guessEntryArray)
 
    return [rightSpot, wrongSpot]
     
@@ -112,11 +74,7 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
     if(equals(guessCircles, answerKey)){
       alert("you win")
     } else {
-      console.log(handleHintPegs(guessCircles, answerKey))
-    }
-    if(Object.values(guessCircles).includes("")){
-      alert('all circles must be filled!')
-    } else {
+      setHintPegKey(handleHintPegs(guessCircles, answerKey))
       setTurn(turn += 1)
       setGuessCircles({
         0: "",
@@ -125,7 +83,13 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
         3: "",
       })
     }
+    if(Object.values(guessCircles).includes("")){
+      alert('all circles must be filled!')
+    } 
   }
+
+
+
 
 
 
@@ -143,7 +107,7 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
       : null}
       {turn === guess ? <button onClick={handleCheckClick}>check</button> : null}
       {turn > guess ?
-      <HintPegs />
+      <HintPegs hintPegKey={hintPegKey} />
       : null}
     </div>
   )
