@@ -1,10 +1,10 @@
 import React from 'react'
 import ColorButton from './ColorButton'
 
-function Panel({setCurrentColor, level}) {
+function Panel({setCurrentColor, level, modal}) {
     
     const renderButtons = level.map((color, i) => {
-        return <ColorButton key={i} color={color} setCurrentColor={setCurrentColor}/>
+        return <ColorButton key={i} color={color} setCurrentColor={setCurrentColor} modal={modal}/>
     })
   return (
     <div className='Panel'>

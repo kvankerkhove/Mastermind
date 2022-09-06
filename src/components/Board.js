@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import BoardTile from './BoardTile'
 
-function Board({currentColor, turn, setTurn, answerKey={answerKey}}) {
+function Board({currentColor, turn, setTurn, answerKey={answerKey}, modal}) {
     const n = 8
     const renderTiles = [...Array(n)].map((e, i) => {
-        return <BoardTile key={i} guess={i + 1} currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey}/>
+        return <BoardTile key={i} guess={i + 1} currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal}/>
     })
 
   return (

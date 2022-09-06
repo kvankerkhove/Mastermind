@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board.js'
 import Panel from './Panel.js'
+import Modal from './Modal.js'
 import './Game.css'
 
 function Game() {
@@ -17,6 +18,13 @@ function Game() {
         3: "",
     })
     const [turn, setTurn] = useState(1)
+    const [modalInfo, setModalInfo] = useState({
+        title: "",
+        text: "",
+        button: ""
+    })
+    const [modal, setModel] = useState(true)
+
     
     useEffect(() => {
         const keys = Object.keys(answerKey)
@@ -35,8 +43,9 @@ function Game() {
 
   return (
     <div className='Game'>
-        <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey}/>
-        <Panel setCurrentColor={setCurrentColor} level={level}/>
+        <Modal modalInfo={modalInfo} modal={modal}/>
+        <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal}/>
+        <Panel setCurrentColor={setCurrentColor} level={level} modal={modal}/>
     </div>
   )
 }

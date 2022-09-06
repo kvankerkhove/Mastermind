@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './BoardTile.css'
 import HintPegs from './HintPegs'
 
-function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
+
+function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
   const [guessCircles, setGuessCircles] = useState({
     0: "",
     1: "",
@@ -16,10 +17,11 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
   }
 
   const handleOnClick = (e) => {
-    e.target.style.backgroundColor = currentColor
-    let index = parseInt(e.target.id, 10) - 1
-
-    setGuessCircles({...guessCircles, [index]: e.target.style.backgroundColor})
+    if(!modal){
+      e.target.style.backgroundColor = currentColor
+      let index = parseInt(e.target.id, 10) - 1
+      setGuessCircles({...guessCircles, [index]: e.target.style.backgroundColor})
+    }
   }
 
   // console.log(guessCircles)
@@ -70,9 +72,18 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
   }
 
 
-  const handleCheckClick = (e) => {
+  const handleCheckClick = () => {
     if(equals(guessCircles, answerKey)){
       alert("you win")
+      setTurn(1)
+      setGuessCircles({
+        0: "",
+        1: "",
+        2: "",
+        3: "",
+      })
+    } else if(Object.values(guessCircles).includes("")) {
+      alert('all circles must be filled!')
     } else {
       setHintPegKey(handleHintPegs(guessCircles, answerKey))
       setTurn(turn += 1)
@@ -83,9 +94,7 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey }) {
         3: "",
       })
     }
-    if(Object.values(guessCircles).includes("")){
-      alert('all circles must be filled!')
-    } 
+    
   }
 
 
