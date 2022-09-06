@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import './Modal.css'
 
-function Modal({modalInfo, modal}) {
+function Modal({modalInfo, modal, handleNewGame}) {
     const {title, text, button} = modalInfo
+
+
     
   return (
     <>
@@ -14,7 +16,7 @@ function Modal({modalInfo, modal}) {
                 <p>
                     {text}
                 </p>
-                <button className="close-modal" >
+                <button onClick={() => handleNewGame()} className="close-modal" >
                     {button}
                 </button>
             </div>

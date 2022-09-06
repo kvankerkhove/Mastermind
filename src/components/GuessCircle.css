@@ -1,0 +1,19 @@
+.guess-circle {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 2px dotted black;
+    border-radius: 50%;
+    opacity: .75;
+    background-color: #FFFFFF;
+}
+
+.guess-circle-modal {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 2px dotted black;
+    border-radius: 50%;
+    opacity: .05;
+    background-color: #FFFFFF;
+}

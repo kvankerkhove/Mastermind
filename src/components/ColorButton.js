@@ -3,7 +3,6 @@ import './ColorButton.css'
 
 function ColorButton({color, setCurrentColor, modal}) {
     const handleOnClick = (e) => {
-        // console.log(e.target.style.backgroundColor)
         setCurrentColor(e.target.style.backgroundColor)
     }
 

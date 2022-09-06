@@ -23,7 +23,7 @@ function Game() {
         text: "",
         button: ""
     })
-    const [modal, setModel] = useState(true)
+    const [modal, setModel] = useState(false)
 
     
     useEffect(() => {
@@ -38,13 +38,45 @@ function Game() {
         setAnswerKey(obj)
     }, [level])
 
+    const startingGuessCircles = document.querySelectorAll('.guess-circle')
+ 
 
-    // console.log(answerKey)
+
+
+    const handleNewGame = () => {
+        setModel(false)
+        setTurn(1)
+        const keys = Object.keys(answerKey)
+        const obj = {}
+        keys.forEach((key) => {
+            // `${key}: ${level[randomNumber]}`
+            let randomNumber = Math.floor(Math.random() * level.length)
+            obj[key] = level[randomNumber]
+        });
+        setAnswerKey(obj)
+        startingGuessCircles.forEach(circle => {
+            circle.style.backgroundColor = 'white'
+        })
+
+    }
+
+    const handleWin = (title, text, button) => {
+        setModel(true)
+        setModalInfo({
+            title: title,
+            text: text,
+            button: button
+        })
+    }
+
+
+
+
 
   return (
     <div className='Game'>
-        <Modal modalInfo={modalInfo} modal={modal}/>
-        <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal}/>
+        <Modal modalInfo={modalInfo} modal={modal} handleNewGame={handleNewGame}/>
+        <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal} handleWin={handleWin}/>
         <Panel setCurrentColor={setCurrentColor} level={level} modal={modal}/>
     </div>
   )

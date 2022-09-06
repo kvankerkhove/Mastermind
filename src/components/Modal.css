@@ -23,9 +23,9 @@ body.active-modal {
     background: rgba(49,49,49,0.8);
 }
 
-.color-button, .guess-circle{
+/* .color-button, .guess-circle{
     opacity: 0.05;
-}
+} */
 .modal-content {
     position: absolute;
     top: 40%;

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './BoardTile.css'
 import HintPegs from './HintPegs'
+import GuessCircle from './GuessCircle'
+import { render } from '@testing-library/react'
 
 
-function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
+function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handleWin }) {
   const [guessCircles, setGuessCircles] = useState({
     0: "",
     1: "",
@@ -11,6 +13,7 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
     3: "",
   })
   const [hintPegKey, setHintPegKey] = useState([])
+  
 
   const equals = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b)
@@ -24,8 +27,6 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
     }
   }
 
-  // console.log(guessCircles)
-  // console.log(answerKey)
 
   const handleHintPegs = (attemptObj, answerObj) => {
     let guessEntryArray = Object.entries(attemptObj)
@@ -38,10 +39,8 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
     let updatedanswerArray= [...answerEntryArray]
 
     for(const ele of guessEntryArray){
-      // console.log(ele)
       let match = answerEntryArray.find(element => (element[0] === ele[0]) && (element[1] === ele[1]))
 
-      
       if(match){
         rightSpot += 1
         let index = updatedanswerArray.indexOf(match)
@@ -49,39 +48,37 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
       } else {
         updatedguessArray.push(ele)
       }
-
     }
-
 
     for(const ele of updatedguessArray){
       let semiMatch = updatedanswerArray.find(element => (element[1] === ele[1]))
       if(semiMatch){
         wrongSpot += 1
         let index = updatedanswerArray.indexOf(semiMatch)
-        console.log(index)
         updatedanswerArray.splice(index, 1)
-      }
-      
+      } 
     }
-
-
-
-   return [rightSpot, wrongSpot]
-    
-    
+   return [rightSpot, wrongSpot] 
   }
+
+
+  const renderGuessCircles = [...Array(4)].map((guessCircle, i) => {
+    return <GuessCircle key={i} handleOnClick={handleOnClick} modal={modal} id={i + 1} />
+  })
+
 
 
   const handleCheckClick = () => {
     if(equals(guessCircles, answerKey)){
-      alert("you win")
-      setTurn(1)
-      setGuessCircles({
-        0: "",
-        1: "",
-        2: "",
-        3: "",
-      })
+      handleWin('YOU WON', `Congrats! You guessed in ${turn} turns. Click START to play again`, 'START')
+      // alert("you win")
+      // setTurn(1)
+      // setGuessCircles({
+      //   0: "",
+      //   1: "",
+      //   2: "",
+      //   3: "",
+      // })
     } else if(Object.values(guessCircles).includes("")) {
       alert('all circles must be filled!')
     } else {
@@ -97,6 +94,8 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
     
   }
 
+  
+
 
 
 
@@ -106,14 +105,7 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
   return (
     <div className="BoardTile">
       <h3>{guess}</h3>
-      { turn >= guess ?
-      <>
-        <div onClick = {handleOnClick} className="guess-circle" id="1"></div>
-        <div onClick = {handleOnClick} className="guess-circle" id="2"></div>
-        <div onClick = {handleOnClick} className="guess-circle" id="3"></div>
-        <div onClick = {handleOnClick} className="guess-circle" id="4"></div>
-      </>
-      : null}
+      { turn >= guess ? renderGuessCircles : null}
       {turn === guess ? <button onClick={handleCheckClick}>check</button> : null}
       {turn > guess ?
       <HintPegs hintPegKey={hintPegKey} />
@@ -123,3 +115,8 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal }) {
 }
 
 export default BoardTile
+
+{/* <div onClick = {handleOnClick} className={ !modal ? "guess-circle" : "guess-circle-modal"}  id="1"></div>
+        <div onClick = {handleOnClick} className="guess-circle" id="2"></div>
+        <div onClick = {handleOnClick} className="guess-circle" id="3"></div>
+        <div onClick = {handleOnClick} className="guess-circle" id="4"></div> */}
