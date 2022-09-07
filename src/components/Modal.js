@@ -5,6 +5,7 @@ function Modal({modalInfo, modal, handleNewGame}) {
     const {title, text, button} = modalInfo
 
 
+
     
   return (
     <>
@@ -19,6 +20,7 @@ function Modal({modalInfo, modal, handleNewGame}) {
                 <button onClick={() => handleNewGame()} className="close-modal" >
                     {button}
                 </button>
+                {modalInfo.secondButton ? <button>{modalInfo.secondButton}</button> : null}
             </div>
         </div>
         )}

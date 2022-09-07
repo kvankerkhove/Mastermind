@@ -69,6 +69,16 @@ function Game() {
         })
     }
 
+    const HandleNewGameButton = (title, text, button, secondButton) => {
+        setModel(true)
+        setModalInfo({
+            title: title,
+            text: text,
+            button: button,
+            secondButton: secondButton
+        })
+    } 
+
 
 
 
@@ -77,7 +87,7 @@ function Game() {
     <div className='Game'>
         <Modal modalInfo={modalInfo} modal={modal} handleNewGame={handleNewGame}/>
         <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal} handleWin={handleWin}/>
-        <Panel setCurrentColor={setCurrentColor} level={level} modal={modal}/>
+        <Panel setCurrentColor={setCurrentColor} level={level} modal={modal} HandleNewGameButton={HandleNewGameButton}/>
     </div>
   )
 }

@@ -20,7 +20,7 @@ body.active-modal {
 }
 
 .overlay{
-    background: rgba(49,49,49,0.8);
+    background: rgba(49,49,49,.8);
 }
 
 /* .color-button, .guess-circle{
@@ -33,15 +33,22 @@ body.active-modal {
     transform: translate(-50%, -50%);
     line-height: 1.4;
     background: #f1f1f1;
+    z-index: 2;
+    /* opacity: 1; */
     padding: 14px 28px;
     border-radius: 3px;
     max-width: 600px;
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .close-modal {
-    position: absolute;
+    align-self: center;
+    width: 100px;
+    margin: 5px;
     top: 10px;
     right: 10px;
     padding: 5px 7px;
+    cursor: pointer;
 }
