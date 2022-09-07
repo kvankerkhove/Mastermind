@@ -3,9 +3,10 @@ import ColorButton from './ColorButton'
 
 function Panel({setCurrentColor, level, modal, HandleNewGameButton}) {
     
-    const renderButtons = level.map((color, i) => {
-        return <ColorButton key={i} color={color} setCurrentColor={setCurrentColor} modal={modal}/>
-    })
+  const renderButtons = level.map((color, i) => {
+      return <ColorButton key={i} color={color} setCurrentColor={setCurrentColor} modal={modal}/>
+  })
+  
   return (
     <div className='Panel'>
         <h2>Panel</h2>

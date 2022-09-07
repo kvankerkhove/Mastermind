@@ -4,9 +4,6 @@ import './Modal.css'
 function Modal({modalInfo, modal, handleNewGame}) {
     const {title, text, button} = modalInfo
 
-
-
-    
   return (
     <>
         {modal && (

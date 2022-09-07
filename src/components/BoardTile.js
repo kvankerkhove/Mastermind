@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './BoardTile.css'
 import HintPegs from './HintPegs'
 import GuessCircle from './GuessCircle'
@@ -26,7 +26,6 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
       setGuessCircles({...guessCircles, [index]: e.target.style.backgroundColor})
     }
   }
-
 
   const handleHintPegs = (attemptObj, answerObj) => {
     let guessEntryArray = Object.entries(attemptObj)

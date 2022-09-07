@@ -6,8 +6,8 @@ import './Game.css'
 
 function Game() {
     const easy = ['rgb(235, 214, 70)', 'rgb(59, 237, 156)', 'rgb(96, 70, 235)', 'rgb(235, 95, 72)']
-    // const medium = [...easy, '#4A74FF']
-    // const hard = [...medium, '#4D4F4F']
+    const medium = [...easy, rgb(74, 116, 255)]
+    const hard = [...medium, rgb(77, 79, 79)]
 
     const [currentColor, setCurrentColor] = useState('#EBD646')
     const [level, setLevel] = useState(easy)
@@ -25,12 +25,10 @@ function Game() {
     })
     const [modal, setModel] = useState(false)
 
-    
     useEffect(() => {
         const keys = Object.keys(answerKey)
         const obj = {}
         keys.forEach((key) => {
-            // `${key}: ${level[randomNumber]}`
             let randomNumber = Math.floor(Math.random() * level.length)
             obj[key] = level[randomNumber]
         });
@@ -39,9 +37,6 @@ function Game() {
     }, [level])
 
     const startingGuessCircles = document.querySelectorAll('.guess-circle')
- 
-
-
 
     const handleNewGame = () => {
         setModel(false)
@@ -49,7 +44,6 @@ function Game() {
         const keys = Object.keys(answerKey)
         const obj = {}
         keys.forEach((key) => {
-            // `${key}: ${level[randomNumber]}`
             let randomNumber = Math.floor(Math.random() * level.length)
             obj[key] = level[randomNumber]
         });
@@ -78,10 +72,6 @@ function Game() {
             secondButton: secondButton
         })
     } 
-
-
-
-
 
   return (
     <div className='Game'>
