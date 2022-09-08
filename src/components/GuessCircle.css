@@ -2,9 +2,10 @@
     width: 40px;
     height: 40px;
     margin: 5px;
-    border: 2px dotted black;
+    /* border: 1px solid black; */
+    box-shadow: inset 0px 0px 10px 0px rgb(66, 65, 65);
     border-radius: 50%;
-    opacity: .75;
+    opacity: 1;
     background-color: #FFFFFF;
 }
 

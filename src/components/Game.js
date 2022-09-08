@@ -17,6 +17,7 @@ function Game() {
         2: "",
         3: "",
     })
+    console.log(answerKey)
     const [turn, setTurn] = useState(1)
     const [modalInfo, setModalInfo] = useState({
         title: "",

@@ -7,16 +7,24 @@
     opacity: 1;
 
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.color-button:hover{
+    border-radius: 25%;
 }
 
 .litUp {
     /* opacity: 1; */
     /* border: 5px solid black; */
-    box-shadow: inset 0px 0px 10px 4px black;
+    box-shadow: inset 0px 0px 10px 4px rgb(66, 65, 65);
     box-sizing: border-box;
+    border-radius: 25%;
 
 }
 
 .notLitUp {
     /* opacity: .6; */
+    box-shadow: inset 0px 0px 10px 0px rgb(66, 65, 65);
+
 }

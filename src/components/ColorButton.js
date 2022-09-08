@@ -17,19 +17,21 @@ function ColorButton({color, setCurrentColor, modal, currentColor}) {
   
   }
 
-  const handleMouseOver = (e) => {
-    if(!modal) e.target.style.opacity = .6;
-  }
+  // const handleMouseOver = (e) => {
+  //   if(!modal) e.target.style.opacity = .6;
+  // }
 
-  const handleMouseOut = (e) => {
-    if(!modal) e.target.style.opacity = 1;
-  }
+  // const handleMouseOut = (e) => {
+  //   if(!modal) e.target.style.opacity = 1;
+  // }
 
   
 
   return (
-    <div onClick={handleOnClick} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='color-button notLitUp'  style={{backgroundColor: `${color}`}}></div>
+    <div onClick={handleOnClick}  className='color-button notLitUp'  style={{backgroundColor: `${color}`}}></div>
   )
 }
 
 export default ColorButton
+
+// onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
