@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Modal.css'
 
-function Modal({modalInfo, modal, handleNewGame}) {
+function Modal({modalInfo, modal, handleNewGame, handleCloseModal}) {
     const {title, text, button} = modalInfo
 
   return (
@@ -14,10 +14,10 @@ function Modal({modalInfo, modal, handleNewGame}) {
                 <p>
                     {text}
                 </p>
-                <button onClick={() => handleNewGame()} className="close-modal" >
+                <button onClick={() => handleNewGame()} className="start-button-modal" >
                     {button}
                 </button>
-                {modalInfo.secondButton ? <button>{modalInfo.secondButton}</button> : null}
+                {modalInfo.secondButton ? <button onClick={() => handleCloseModal()}className='close-button-modal'>{modalInfo.secondButton}</button> : null}
             </div>
         </div>
         )}

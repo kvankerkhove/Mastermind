@@ -6,8 +6,8 @@ import './Game.css'
 
 function Game() {
     const easy = ['rgb(235, 214, 70)', 'rgb(59, 237, 156)', 'rgb(96, 70, 235)', 'rgb(235, 95, 72)']
-    const medium = [...easy, rgb(74, 116, 255)]
-    const hard = [...medium, rgb(77, 79, 79)]
+    const medium = [...easy, 'rgb(74, 116, 255)']
+    const hard = [...medium, 'rgb(77, 79, 79)']
 
     const [currentColor, setCurrentColor] = useState('#EBD646')
     const [level, setLevel] = useState(easy)
@@ -23,7 +23,7 @@ function Game() {
         text: "",
         button: ""
     })
-    const [modal, setModel] = useState(false)
+    const [modal, setModal] = useState(false)
 
     useEffect(() => {
         const keys = Object.keys(answerKey)
@@ -39,7 +39,7 @@ function Game() {
     const startingGuessCircles = document.querySelectorAll('.guess-circle')
 
     const handleNewGame = () => {
-        setModel(false)
+        setModal(false)
         setTurn(1)
         const keys = Object.keys(answerKey)
         const obj = {}
@@ -55,7 +55,7 @@ function Game() {
     }
 
     const handleWin = (title, text, button) => {
-        setModel(true)
+        setModal(true)
         setModalInfo({
             title: title,
             text: text,
@@ -63,8 +63,8 @@ function Game() {
         })
     }
 
-    const HandleNewGameButton = (title, text, button, secondButton) => {
-        setModel(true)
+    const handleNewGameButton = (title, text, button, secondButton) => {
+        setModal(true)
         setModalInfo({
             title: title,
             text: text,
@@ -73,11 +73,15 @@ function Game() {
         })
     } 
 
+    const handleCloseModal = () => {
+        setModal(false)
+    }
+
   return (
     <div className='Game'>
-        <Modal modalInfo={modalInfo} modal={modal} handleNewGame={handleNewGame}/>
+        <Modal modalInfo={modalInfo} modal={modal} handleNewGame={handleNewGame} handleCloseModal={handleCloseModal}/>
         <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal} handleWin={handleWin}/>
-        <Panel setCurrentColor={setCurrentColor} level={level} modal={modal} HandleNewGameButton={HandleNewGameButton}/>
+        <Panel setCurrentColor={setCurrentColor} level={level} modal={modal} handleNewGameButton={handleNewGameButton}/>
     </div>
   )
 }
