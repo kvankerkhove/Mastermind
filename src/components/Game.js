@@ -81,7 +81,7 @@ function Game() {
     <div className='Game'>
         <Modal modalInfo={modalInfo} modal={modal} handleNewGame={handleNewGame} handleCloseModal={handleCloseModal}/>
         <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal} handleWin={handleWin}/>
-        <Panel setCurrentColor={setCurrentColor} level={level} modal={modal} handleNewGameButton={handleNewGameButton}/>
+        <Panel setCurrentColor={setCurrentColor} level={level} modal={modal} handleNewGameButton={handleNewGameButton} currentColor={currentColor}/>
     </div>
   )
 }
