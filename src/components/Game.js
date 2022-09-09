@@ -5,8 +5,8 @@ import Modal from './Modal.js'
 import './Game.css'
 
 function Game() {
-    const easy = ['rgb(235, 214, 70)', 'rgb(59, 237, 156)', 'rgb(96, 70, 235)', 'rgb(235, 95, 72)']
-    const medium = [...easy, 'rgb(74, 116, 255)']
+    const easy = ['rgb(235, 214, 70)', 'rgb(59, 237, 156)', 'rgb(74, 116, 255)', 'rgb(235, 95, 72)']
+    const medium = [...easy, 'rgb(125, 54, 247)']
     const hard = [...medium, 'rgb(77, 79, 79)']
 
     const [currentColor, setCurrentColor] = useState('#EBD646')
