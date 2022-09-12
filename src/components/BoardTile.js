@@ -14,7 +14,7 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
   })
   const [hintPegKey, setHintPegKey] = useState([])
 
-  console.log(turn, guess)
+  // console.log(turn, guess)
   
   const equals = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b)

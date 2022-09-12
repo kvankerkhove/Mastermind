@@ -17,7 +17,7 @@ function Game() {
         2: "",
         3: "",
     })
-    console.log(answerKey)
+    // console.log(answerKey)
     const [turn, setTurn] = useState(1)
     const [modalInfo, setModalInfo] = useState({
         title: "",
@@ -25,6 +25,7 @@ function Game() {
         button: ""
     })
     const [modal, setModal] = useState(false)
+    const [gameOver, setGameOver] = useState(false)
 
     useEffect(() => {
         const keys = Object.keys(answerKey)
@@ -37,10 +38,25 @@ function Game() {
         setAnswerKey(obj)
     }, [level])
 
+    useEffect(() => {
+        if(gameOver){
+            setModal(true)
+            setModalInfo({
+                title: 'GAME OVER',
+                text: 'You ran out of turns. Click START OVER to start a new game.',
+                button: 'START OVER'
+            })
+        }
+
+    }, [gameOver])
+
+    console.log(gameOver)
+
     const startingGuessCircles = document.querySelectorAll('.guess-circle')
 
     const handleNewGame = () => {
         setModal(false)
+        setGameOver(false)
         setTurn(1)
         const keys = Object.keys(answerKey)
         const obj = {}
@@ -78,10 +94,19 @@ function Game() {
         setModal(false)
     }
 
+    // const handleGameOver = (title, text, button) => {
+    //     setModal(true)
+    //     setModalInfo({
+    //         title: title,
+    //         text: text,
+    //         button: button
+    //     })
+    // }
+
   return (
     <div className='Game'>
         <Modal modalInfo={modalInfo} modal={modal} handleNewGame={handleNewGame} handleCloseModal={handleCloseModal}/>
-        <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal} handleWin={handleWin}/>
+        <Board currentColor={currentColor} turn={turn} setTurn={setTurn} answerKey={answerKey} modal={modal} handleWin={handleWin} setGameOver={setGameOver}/>
         <Panel setCurrentColor={setCurrentColor} level={level} modal={modal} handleNewGameButton={handleNewGameButton} currentColor={currentColor}/>
     </div>
   )
