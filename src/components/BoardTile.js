@@ -14,7 +14,8 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
   })
   const [hintPegKey, setHintPegKey] = useState([])
 
-  // console.log(turn, guess)
+  // console.log(turn)
+  // console.log(guess)
   
   const equals = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b)
@@ -22,10 +23,13 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
 
   const handleOnClick = (e) => {
     if(!modal){
+      e.target.classList.remove('plain-circle')
+      e.target.classList.add('guess-circle')
       e.target.style.backgroundColor = currentColor
       let index = parseInt(e.target.id, 10) - 1
       setGuessCircles({...guessCircles, [index]: e.target.style.backgroundColor})
     }
+    console.log(e.target.classList)
   }
 
   const handleHintPegs = (attemptObj, answerObj) => {
@@ -60,10 +64,11 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
     }
    return [rightSpot, wrongSpot] 
   }
+  
 
 
   const renderGuessCircles = [...Array(4)].map((guessCircle, i) => {
-    return <GuessCircle key={i} handleOnClick={handleOnClick} modal={modal} id={i + 1} />
+    return <GuessCircle key={i} handleOnClick={handleOnClick} modal={modal} id={i + 1} guess={guess} turn={turn} />
   })
 
 

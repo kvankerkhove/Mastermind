@@ -20,3 +20,16 @@
     opacity: .05;
     background-color: #FFFFFF;
 }
+
+.plain-circle {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    box-shadow: inset 0px 0px 1px 1px rgb(66, 65, 65);
+
+    /* border: 2px dotted black; */
+    border-radius: 50%;
+    /* opacity: .05; */
+    background-color: #FFFFFF;
+
+}
