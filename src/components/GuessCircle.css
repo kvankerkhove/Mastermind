@@ -1,6 +1,6 @@
 .guess-circle {
-    width: 40px;
-    height: 40px;
+    width: 4vw;
+    height: 4vw;
     margin: 5px;
     /* border: 1px solid black; */
     box-shadow: inset -5px -5px 12px 3px rgb(66, 65, 65);
@@ -14,8 +14,8 @@
 }
 
 .guess-circle-modal {
-    width: 40px;
-    height: 40px;
+    width: 4vw;
+    height: 4vw;
     margin: 5px;
     border: 2px dotted black;
     border-radius: 50%;
@@ -25,8 +25,8 @@
 }
 
 .plain-circle {
-    width: 40px;
-    height: 40px;
+    width: 4vw;
+    height: 4vw;
     margin: 5px;
     box-shadow: inset 0px 0px 1px 1px black;
 
