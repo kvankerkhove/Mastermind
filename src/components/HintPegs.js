@@ -32,10 +32,3 @@ function HintPegs({hintPegKey}) {
 }
 
 export default HintPegs
-
-// style={{border: '2px solid black', backgroundColor: 'black'}}
-
-{/* <div className='check-circle' id='check-circle-1'></div>
-  <div className='check-circle' id='check-circle-2'></div>
-  <div className='check-circle' id='check-circle-3'></div>
-  <div className='check-circle' id='check-circle-4'></div> */}

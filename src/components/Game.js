@@ -17,7 +17,6 @@ function Game() {
         2: "",
         3: "",
     })
-    // console.log(answerKey)
     const [turn, setTurn] = useState(1)
     const [modalInfo, setModalInfo] = useState({
         title: "",
@@ -96,14 +95,6 @@ function Game() {
         setModal(false)
     }
 
-    // const handleGameOver = (title, text, button) => {
-    //     setModal(true)
-    //     setModalInfo({
-    //         title: title,
-    //         text: text,
-    //         button: button
-    //     })
-    // }
 
   return (
     <div className='Game'>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './ColorButton.css'
 
-function ColorButton({color, setCurrentColor, modal, currentColor}) {
+function ColorButton({color, setCurrentColor}) {
   
 
   const handleOnClick = (e) => {
@@ -17,16 +17,6 @@ function ColorButton({color, setCurrentColor, modal, currentColor}) {
   
   }
 
-  // const handleMouseOver = (e) => {
-  //   if(!modal) e.target.style.opacity = .6;
-  // }
-
-  // const handleMouseOut = (e) => {
-  //   if(!modal) e.target.style.opacity = 1;
-  // }
-
-  
-
   return (
     <div onClick={handleOnClick} className='color-button notLitUp'  style={{backgroundColor: `${color}`}}></div>
   )
@@ -34,4 +24,3 @@ function ColorButton({color, setCurrentColor, modal, currentColor}) {
 
 export default ColorButton
 
-// onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}

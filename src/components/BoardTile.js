@@ -13,9 +13,6 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
     3: "",
   })
   const [hintPegKey, setHintPegKey] = useState([])
-
-  // console.log(turn)
-  // console.log(guess)
   
   const equals = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b)
@@ -65,25 +62,13 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
    return [rightSpot, wrongSpot] 
   }
   
-
-
   const renderGuessCircles = [...Array(4)].map((guessCircle, i) => {
     return <GuessCircle key={i} handleOnClick={handleOnClick} modal={modal} id={i + 1} guess={guess} turn={turn} />
   })
 
-
-
   const handleCheckClick = () => {
     if(equals(guessCircles, answerKey)){
       handleWin('YOU WON', `Congrats! You guessed in ${turn} turns. Click START to play again`, 'START')
-      // alert("you win")
-      // setTurn(1)
-      // setGuessCircles({
-      //   0: "",
-      //   1: "",
-      //   2: "",
-      //   3: "",
-      // })
     } else if(Object.values(guessCircles).includes("")) {
       alert('all circles must be filled!')
     } else {
@@ -99,14 +84,6 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
     
   }
 
-  
-
-
-
-
-
-
-  
   return (
     <div className="BoardTile">
       <h3 className='guess-number'>{guess}.</h3>
@@ -120,8 +97,3 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
 }
 
 export default BoardTile
-
-{/* <div onClick = {handleOnClick} className={ !modal ? "guess-circle" : "guess-circle-modal"}  id="1"></div>
-        <div onClick = {handleOnClick} className="guess-circle" id="2"></div>
-        <div onClick = {handleOnClick} className="guess-circle" id="3"></div>
-        <div onClick = {handleOnClick} className="guess-circle" id="4"></div> */}
