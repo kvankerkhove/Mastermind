@@ -14,10 +14,12 @@ function GuessCircle({handleOnClick, modal, id, guess, turn}) {
     // guessCircleId.classList.remove('plain-circle')
 
   return (
-    <div onClick={handleOnClick} id={id} className={ !modal ? "plain-circle" : "guess-circle-modal"}></div>
+    <div onClick={handleOnClick} id={id} className='plain-circle'></div>
   )
 }
 
 export default GuessCircle
+
+// className={ !modal ? "plain-circle" : "guess-circle-modal"}
 
 // { !modal ? "guess-circle" : "guess-circle-modal"}
