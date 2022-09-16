@@ -9,6 +9,7 @@
     opacity: 1;
     background-color: #FFFFFF;
     cursor: pointer;
+    align-self: center;
     /* background: radial-gradient(circle at 13px 13px, #5cabff, #000); */
 }
 
@@ -20,6 +21,7 @@
     border-radius: 50%;
     opacity: .05;
     background-color: #FFFFFF;
+    align-self: center;
 }
 
 .plain-circle {
@@ -32,5 +34,6 @@
     border-radius: 50%;
     /* opacity: .05; */
     background-color: white;
+    align-self: center;
 
 }

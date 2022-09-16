@@ -109,9 +109,9 @@ function BoardTile({ guess, currentColor, setTurn, turn, answerKey, modal, handl
   
   return (
     <div className="BoardTile">
-      <h3>{guess}</h3>
+      <h3 className='guess-number'>{guess}.</h3>
       { turn >= guess ? renderGuessCircles : null}
-      {turn === guess ? <button onClick={handleCheckClick}>check</button> : null}
+      {turn === guess ? <button id='check-button' onClick={handleCheckClick}>CHECK</button> : null}
       {turn > guess ?
       <HintPegs hintPegKey={hintPegKey} />
       : null}

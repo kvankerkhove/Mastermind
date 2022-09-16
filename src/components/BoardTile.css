@@ -5,5 +5,17 @@
 
 }
 
+#check-button {
+    font-size: 1.5vh;
+    border-radius: 8px;
+    height: 3vh;
+    align-self: center;
+    margin-left: 0.5vw
+}
+
+.guess-number {
+    margin-right: 2vw;
+}
+
 
 
