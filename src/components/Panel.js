@@ -9,7 +9,6 @@ function Panel({setCurrentColor, level, modal, handleNewGameButton, currentColor
   
   return (
     <div className='Panel'>
-        <h2>Panel</h2>
         <div id='buttons'>
           {renderButtons}
         </div>

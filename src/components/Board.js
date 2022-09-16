@@ -15,7 +15,7 @@ function Board({currentColor, turn, setTurn, answerKey={answerKey}, modal, handl
 
   return (
     <div className="Board">
-        <h2>Board</h2>
+        {/* <h2>Board</h2> */}
         {renderTiles}
     </div>
   )

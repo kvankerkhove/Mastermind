@@ -28,7 +28,7 @@ function ColorButton({color, setCurrentColor, modal, currentColor}) {
   
 
   return (
-    <div onClick={handleOnClick}  className='color-button notLitUp'  style={{backgroundColor: `${color}`}}></div>
+    <div onClick={handleOnClick} className='color-button notLitUp'  style={{backgroundColor: `${color}`}}></div>
   )
 }
 

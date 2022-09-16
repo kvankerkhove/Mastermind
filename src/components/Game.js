@@ -9,7 +9,7 @@ function Game() {
     const medium = [...easy, 'rgb(125, 54, 247)']
     const hard = [...medium, 'rgb(77, 79, 79)']
 
-    const [currentColor, setCurrentColor] = useState('#EBD646')
+    const [currentColor, setCurrentColor] = useState('rgb(235, 214, 70)')
     const [level, setLevel] = useState(easy)
     const [answerKey, setAnswerKey] = useState({
         0: "",
