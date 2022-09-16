@@ -4,3 +4,12 @@
     z-index: 1;
 }
 
+#new-game-button {
+    font-size: 2vh;
+    border-radius: 8px;
+    height: 3vh;
+    align-self: center;
+    margin-left: 0.5vw;
+    font-family: 'Bebas Neue', cursive;
+}
+

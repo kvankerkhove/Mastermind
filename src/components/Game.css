@@ -3,5 +3,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 10vh;
-    margin-top: 10vh;
+    margin-top: 7vh;
+    position: relative;
+    z-index: 1;
 }

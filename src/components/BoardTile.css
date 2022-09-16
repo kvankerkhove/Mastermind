@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .BoardTile {
     display: flex;
     flex-direction: row;
@@ -6,11 +8,13 @@
 }
 
 #check-button {
-    font-size: 1.5vh;
+    font-size: 2vh;
     border-radius: 8px;
     height: 3vh;
     align-self: center;
-    margin-left: 0.5vw
+    margin-left: 0.5vw;
+    font-family: 'Bebas Neue', cursive;
+
 }
 
 .guess-number {
