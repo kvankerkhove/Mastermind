@@ -2,15 +2,12 @@
     width: 4vw;
     height: 4vw;
     margin: 5px;
-    /* border: 1px solid black; */
     box-shadow: inset -5px -5px 12px 3px rgb(66, 65, 65);
-
     border-radius: 50%;
     opacity: 1;
     background-color: #FFFFFF;
     cursor: pointer;
     align-self: center;
-    /* background: radial-gradient(circle at 13px 13px, #5cabff, #000); */
 }
 
 .guess-circle-modal {
@@ -29,10 +26,7 @@
     height: 4vw;
     margin: 5px;
     box-shadow: inset 0px 0px 1px 1px black;
-
-    /* border: 2px dotted black; */
     border-radius: 50%;
-    /* opacity: .05; */
     background-color: white;
     align-self: center;
 

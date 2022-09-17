@@ -26,9 +26,6 @@ body.active-modal {
     background: rgba(49,49,49,.8);
 }
 
-/* .color-button, .guess-circle{
-    opacity: 0.05;
-} */
 .modal-content {
     position: absolute;
     top: 40%;
