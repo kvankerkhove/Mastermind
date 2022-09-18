@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .Panel {
     display: flex;
     flex-direction: column;
@@ -11,5 +13,18 @@
     align-self: center;
     margin-left: 0.5vw;
     font-family: 'Bebas Neue', cursive;
+}
+
+#radio-buttons{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+.radio-btn{
+    align-self: flex-start;
+    margin-left: 2vw;
+
 }
 
