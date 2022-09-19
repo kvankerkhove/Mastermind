@@ -43,7 +43,8 @@ function Game() {
             setModalInfo({
                 title: 'GAME OVER',
                 text: 'You ran out of turns. Click START OVER to start a new game.',
-                button: 'START OVER'
+                button: 'START OVER',
+                answerKey: answerKey
             })
         }
 

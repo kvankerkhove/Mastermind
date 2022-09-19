@@ -61,3 +61,9 @@ body.active-modal {
     padding: 5px 7px;
     align-self: center;
 }
+
+#answer-key-circles{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
