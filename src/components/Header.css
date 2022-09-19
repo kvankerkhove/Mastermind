@@ -2,12 +2,14 @@
 #mastermind {
     font-family: 'Bebas Neue', cursive;
     font-size: 10vw;
-    margin: 1vw
+    margin: 1vw;
+    color: white;
 }
 
 .rules {
     margin-left: 10vw;
     margin-right: 10vw;
+    color: white;
 }
 
 

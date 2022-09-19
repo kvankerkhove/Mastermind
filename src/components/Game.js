@@ -66,7 +66,7 @@ function Game() {
         });
         setAnswerKey(obj)
         startingGuessCircles.forEach(circle => {
-            circle.style.backgroundColor = 'white'
+            circle.style.backgroundColor = 'black'
             circle.classList.remove('guess-circle')
             circle.classList.add('plain-circle')
         })

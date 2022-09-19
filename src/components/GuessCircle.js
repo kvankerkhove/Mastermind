@@ -3,7 +3,9 @@ import './GuessCircle.css'
 
 function GuessCircle({handleOnClick, id}) {
   return (
-    <div onClick={handleOnClick} id={id} className='plain-circle'></div>
+    <div className='guess-circle-container'>
+      <div onClick={handleOnClick} id={id} className='plain-circle'></div>
+    </div>
   )
 }
 
