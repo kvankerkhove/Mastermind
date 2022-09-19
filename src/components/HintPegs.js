@@ -9,11 +9,11 @@ function HintPegs({hintPegKey}) {
   let blank = 4 - (rightColorRightSpot + rightColorWrongSpot)
 
   const renderRCRS = [...Array(rightColorRightSpot).keys()].map(pep => {
-    return <div className="check-circle" style={{border: '1px solid black', backgroundColor: 'black'}}></div>
+    return <div className="check-circle" style={{border: '2px solid black', backgroundColor: 'black'}}></div>
   })
 
   const renderRCWS = [...Array(rightColorWrongSpot).keys()].map(peg => {
-    return <div className="check-circle" style={{border: '1px solid black', backgroundColor: "white"}}></div>
+    return <div className="check-circle" style={{border: '2px solid white', backgroundColor: "white", boxShadow: 'none'}}></div>
     
   })
 
