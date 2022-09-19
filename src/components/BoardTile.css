@@ -5,7 +5,8 @@
     flex-direction: row;
     align-items: center;
     margin: 5px;
-    height: 10vh
+    height: 10vh;
+    margin-bottom: 1vw
 
 }
 
@@ -24,6 +25,7 @@
     font-family: 'Bebas Neue', cursive;
     font-size: 3vw;
     align-self: center;
+    color: #8f8d8d;
 
 }
 

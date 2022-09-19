@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
+    margin-left: 3vw;
 }
 
 #new-game-button {

@@ -1,3 +1,10 @@
+.check-circle-container{
+    width: 2vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .check-circle{
     box-shadow: inset 0px 0px 3px 0px rgb(66, 65, 65);
 }
@@ -8,8 +15,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    column-gap: .25vw;
-    row-gap: .25vw;
     margin-left: .75vw;
     align-self: center;
 }
@@ -17,8 +22,8 @@
 .check-circle {
     width: 1vw;
     height: 1vw;
-    margin: 1px;
-    border: 2px solid lightgray;
+    /* margin: 1px; */
+    /* border: 2px solid lightgray; */
     border-radius: 50%;
-    background-color: darkgray;
+    background-color: rgb(153, 150, 150);
 }
