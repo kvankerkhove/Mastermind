@@ -6,18 +6,32 @@
     align-items: center;
     margin: 5px;
     height: 10vh;
-    margin-bottom: 1vw
+    margin-bottom: 1vw;
 
 }
 
 #check-button {
     font-size: 2vh;
     border-radius: 8px;
-    height: 3vh;
+    height: 4vw;
+    width: 4vw;
     align-self: center;
-    margin-left: 0.5vw;
+    /* margin-left: 0.5vw; */
     font-family: 'Bebas Neue', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+
+}
+
+#check-button-container{
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .75vw;
 }
 
 .guess-number {
